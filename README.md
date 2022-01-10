@@ -18,5 +18,10 @@ We implement kmeans to cluster the points that are furthest from all clusters co
 
 While Euclidean distance in feature space is one option, Isolation forest takes a different approach. Isolation forest count the number of splits necessary to reach a specific point; the fewer splits needed, the more 'isolated' and hence anomaly the point is.
 
-## Architecture
 ![image](https://user-images.githubusercontent.com/72940291/148746550-8cd7a437-bb35-44f8-8d33-27b61a71331f.png)
+
+With a stacking model, we were able to get an F1 score of 96.7%, which was greater than the target of 81.1%
+![image](https://user-images.githubusercontent.com/72940291/148746761-df0e6cda-4bdc-4567-836b-1e5c5f41e4ee.png)
+
+## Conclusion
+We successfully detected anomalies in the data logs that are in hand using unsupervised learning method and Ensemble Techniques. By choosing 3 unsupervised clustering algorithms, applying them to the data and after identifying anomalies in the data, the data becomes Binary Classification then we implemented Ensemble techniques Stacking to the data, then we compared all the results to get an idea of which algorithm is best and accurate for anomaly detection. 
