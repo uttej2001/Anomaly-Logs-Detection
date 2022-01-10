@@ -12,11 +12,11 @@ This data has three columns:
 ![image](https://user-images.githubusercontent.com/72940291/148744601-9552c8ba-c828-4dbc-b46e-50237477aa3d.png)
 
 ## Approach
-We create Profiles for User-IP over certain time periods. This time period can vary from few hours to few weeks. The profile can include basic count vectors such as total counts, average unit(day/week/hour) counts to complex network calls vectors such as upload/download ratio based on the use case. 
+We establish User Data for specific time intervals. This time span might range from a few hours to several weeks. Depending on the use case, the profiles could include basic counting vectors like total counts and average unit(day/week/hour) counts, as well as more advanced network calls vectors like upload/download ratio.
 
-In this repo we use basic count and frequency vectors. With profiles in hand, we can use ML algorithms to identify anomalies.
+We implement kmeans to cluster the points that are furthest from all clusters combined after the feature space is formed, and the points that are farthest from all clusters joined are labeled anomaly. W e apply the sum of squared distances from the centroids. To weigh outliers more strongly than others, we apply squared distance rather than absolute distance (similar to using MAE vs MSE).
 
-## ML Approach
-Once the feaure space is generated, we use kmeans to cluster and the points which are farther from all clusters combined are considered anomalous. We use sum of squared distances from the centroids in this repo. We use squared distance instead of absolute distance to weigh the outliers more than others(similar to using MAE vs MSE).
+While Euclidean distance in feature space is one option, Isolation forest takes a different approach. Isolation forest count the number of splits necessary to reach a specific point; the fewer splits needed, the more 'isolated' and hence anomaly the point is.
 
-While euclidean distance in the feature space is one way to look at it, Isolation forest offers a unique approach to this problem. Isolation trees see the number of splits it take to reach a certain point, the lesser splits required, the more `isolated` the point is and hence, anomalous.
+## Architecture
+![image](https://user-images.githubusercontent.com/72940291/148746550-8cd7a437-bb35-44f8-8d33-27b61a71331f.png)
